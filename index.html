@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FocusFlow Pro</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="light calm">
+  <div class="container">
+    <h1>Focus Flow Pro</h1>
+
+    <div class="controls-top">
+      <label>Mood:</label>
+      <select id="moodSelect">
+        <option value="calm">Calm</option>
+        <option value="energetic">Energetic</option>
+        <option value="focused">Focused</option>
+      </select>
+
+      <label>Theme:</label>
+      <button id="toggleTheme">🌙</button>
+    </div>
+
+    <div class="timer">
+      <svg class="progress-ring" width="200" height="200">
+        <circle class="progress-ring__circle" stroke="blue" stroke-width="6" fill="transparent" r="90" cx="100" cy="100"/>
+      </svg>
+      <div class="time-display"><span id="minutes">25</span>:<span id="seconds">00</span></div>
+    </div>
+
+    <div class="controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <div class="cycle-selector">
+      <label>Mode:</label>
+      <select id="cycleMode">
+        <option value="pomodoro">Pomodoro (25-5)</option>
+        <option value="custom">Custom</option>
+      </select>
+      <input type="number" id="customFocus" placeholder="Focus (min)" min="1" style="display:none"/>
+      <input type="number" id="customBreak" placeholder="Break (min)" min="1" style="display:none"/>
+    </div>
+
+    <div class="quote" id="quoteDisplay"></div>
+  </div>
+
+  <audio id="startSound" src="start.mp3"></audio>
+  <audio id="breakSound" src="break.mp3"></audio>
+  <audio id="endSound" src="end.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
